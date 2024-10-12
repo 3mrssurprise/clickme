@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary Message</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e0b3ff; /* Soft purple */
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative; /* Allow absolute positioning of the button */
+        }
+
+        .message-container {
+            background-color: #fff0ff; /* Lighter shade of purple */
+            border-radius: 15px;
+            padding: 20px;
+            width: 300px; /* Fixed width */
+            height: 120px; /* Fixed height */
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden; /* Hide any overflow */
+        }
+
+        p {
+            font-size: 18px;
+            color: #6a0dad; /* Darker purple text */
+            font-weight: 500;
+            margin: 0;
+            word-wrap: break-word;
+            overflow: hidden;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #6a0dad;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 10px; /* Space between buttons */
+        }
+
+        button:hover {
+            background-color: #5a099c;
+        }
+
+        .signature {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #6a0dad;
+            font-weight: 500;
+        }
+
+        .special-button {
+            background-color: #ff6f91; /* Different color for the special button */
+            position: absolute; /* Position at the bottom */
+            bottom: 20px; /* Distance from the bottom */
+        }
+
+        .special-button:hover {
+            background-color: #ff4f73; /* Darker shade on hover */
+        }
+
+        @media (max-width: 400px) {
+            .message-container {
+                width: 250px; /* Adjust for smaller screens */
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+
+            .signature {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="message-container">
+        <p id="anniversary-message">Happy first anniversary, my _____! Grateful for every moment we’ve shared and excited for many more years to come 🩷</p>
+    </div>
+    <button onclick="changeCompliment()">Click Here</button>
+    <div class="signature">Yours truly, 3mr</div>
+
+    <button class="special-button" onclick="openSong()">Listen to Our Song</button>
+
+    <script>
+        const compliments = [
+            "everything",
+            "love of my life",
+            "sweetheart",
+            "world",
+            "baby",
+            "sunshine",
+            "soulmate",
+            "anoo",
+            "one and only",
+            "treasure",
+            "heartbeat",
+            "favorite person",
+            "dream come true"
+        ];
+
+        const songUrl = "https://www.youtube.com/watch?v=2Vv-BfVoq4g"; // Replace with your song link
+
+        function changeCompliment() {
+            const randomIndex = Math.floor(Math.random() * compliments.length);
+            const newCompliment = compliments[randomIndex];
+            document.getElementById("anniversary-message").innerHTML = `Happy first anniversary, my ${newCompliment}! Grateful for every moment we’ve shared and excited for many more years to come 🩷`;
+        }
+
+        function openSong() {
+            window.open(songUrl, '_blank'); // Open the song in a new tab
+        }
+    </script>
+</body>
+</html>
